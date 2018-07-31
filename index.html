@@ -321,24 +321,14 @@
 
       
         
-          
-            <h3 id="20分钟学会conda基础操作"><a href="#20分钟学会conda基础操作" class="headerlink" title="20分钟学会conda基础操作"></a>20分钟学会conda基础操作</h3><p>conda是一个高效的包管理和环境管理工具。开始之前确保安装了conda。</p>
-<h4 id="conda管理"><a href="#conda管理" class="headerlink" title="conda管理"></a>conda管理</h4><p>查看conda的版本：<code>conda --version</code><br>若此命令出错，conda并没有正确的安装运行。<br>更新升级conda: <code>conda update conda</code></p>
-<h4 id="环境管理"><a href="#环境管理" class="headerlink" title="环境管理"></a>环境管理</h4><p>使用conda创建的不同的环境之间没有任何联系，环境中的文件、包及其依赖项都是不同的。conda默认创建了一个环境：base/root。</p>
-<ol>
-<li>创建一个新的环境并安装需要的包：<br><code>conda create --name envname package</code></li>
-<li>使用这个环境：<br>Linux和macOS:<code>source activate envname</code><br>Windows: <code>activate envname</code></li>
-<li>查看创建的所有环境：<br><code>conda info --envs</code><br>其中带有*的为活跃的环境</li>
-<li>退出当前环境，会返回默认环境：<br>Linux和macOS:<code>source deactivate</code><br>Windows: <code>deactivate</code></li>
-</ol>
-<h4 id="Python管理"><a href="#Python管理" class="headerlink" title="Python管理"></a>Python管理</h4><p>创建新环境时，默认安装的Python版本和安装conda时使用的版本相同。创建环境时可以安装指定版本的Python。<br>创建安装Python3.5的新环境：<br><code>conda create --name envname python=3.5</code><br>相关的环境操作与上相同。</p>
-<h4 id="包管理"><a href="#包管理" class="headerlink" title="包管理"></a>包管理</h4><ol>
-<li>当你想要安装某个包时，可以在Anaconda的库中搜索是否存在这个包：<br><code>conda search package</code></li>
-<li>若此包存在，可以安装这个包到当前的环境：<br><code>conda install package</code></li>
-<li>查看所有已安装的包：<br><code>conda list</code></li>
-</ol>
-
-          
+          <h3 id="20分钟学会conda基础操作"><a href="#20分钟学会conda基础操作" class="headerlink" title="20分钟学会conda基础操作"></a>20分钟学会conda基础操作</h3><p>conda是一个高效的包管理和环境管理工具。开始之前确保安装了conda。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/31/Learn_conda/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
