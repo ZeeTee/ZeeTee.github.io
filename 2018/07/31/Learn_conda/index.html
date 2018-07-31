@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="ZeeTee的学习记录">
 <meta property="og:description" content="20分钟学会conda基础操作conda是一个高效的包管理和环境管理工具。开始之前确保安装了conda。 conda管理查看conda的版本：conda --version若此命令出错，conda并没有正确的安装运行。更新升级conda: conda update conda 环境管理使用conda创建的不同的环境之间没有任何联系，环境中的文件、包及其依赖项都是不同的。conda默">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-31T09:11:08.405Z">
+<meta property="og:updated_time" content="2018-07-31T09:14:20.908Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="20分钟学会conda基础操作">
 <meta name="twitter:description" content="20分钟学会conda基础操作conda是一个高效的包管理和环境管理工具。开始之前确保安装了conda。 conda管理查看conda的版本：conda --version若此命令出错，conda并没有正确的安装运行。更新升级conda: conda update conda 环境管理使用conda创建的不同的环境之间没有任何联系，环境中的文件、包及其依赖项都是不同的。conda默">
@@ -329,7 +329,10 @@
 <li>创建一个新的环境并安装需要的包：<br><code>conda create --name envname package</code></li>
 <li>使用这个环境：<br>Linux和macOS:<code>source activate envname</code><br>Windows: <code>activate envname</code></li>
 <li>查看创建的所有环境：<br><code>conda info --envs</code><br>其中带有*的为活跃的环境</li>
-<li>退出当前环境，会返回默认环境：<br>Linux和macOS:<code>source deactivate</code><br>Windows: <code>deactivate</code><h4 id="Python管理"><a href="#Python管理" class="headerlink" title="Python管理"></a>Python管理</h4>创建新环境时，默认安装的Python版本和安装conda时使用的版本相同。创建环境时可以安装指定版本的Python。<br>创建安装Python3.5的新环境：<br><code>conda create --name envname python=3.5</code><br>相关的环境操作与上相同。<h4 id="包管理"><a href="#包管理" class="headerlink" title="包管理"></a>包管理</h4></li>
+<li>退出当前环境，会返回默认环境：<br>Linux和macOS:<code>source deactivate</code><br>Windows: <code>deactivate</code></li>
+</ol>
+<h4 id="Python管理"><a href="#Python管理" class="headerlink" title="Python管理"></a>Python管理</h4><p>创建新环境时，默认安装的Python版本和安装conda时使用的版本相同。创建环境时可以安装指定版本的Python。<br>创建安装Python3.5的新环境：<br><code>conda create --name envname python=3.5</code><br>相关的环境操作与上相同。</p>
+<h4 id="包管理"><a href="#包管理" class="headerlink" title="包管理"></a>包管理</h4><ol>
 <li>当你想要安装某个包时，可以在Anaconda的库中搜索是否存在这个包：<br><code>conda search package</code></li>
 <li>若此包存在，可以安装这个包到当前的环境：<br><code>conda install package</code></li>
 <li>查看所有已安装的包：<br><code>conda list</code></li>

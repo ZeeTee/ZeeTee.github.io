@@ -329,7 +329,10 @@
 <li>创建一个新的环境并安装需要的包：<br><code>conda create --name envname package</code></li>
 <li>使用这个环境：<br>Linux和macOS:<code>source activate envname</code><br>Windows: <code>activate envname</code></li>
 <li>查看创建的所有环境：<br><code>conda info --envs</code><br>其中带有*的为活跃的环境</li>
-<li>退出当前环境，会返回默认环境：<br>Linux和macOS:<code>source deactivate</code><br>Windows: <code>deactivate</code><h4 id="Python管理"><a href="#Python管理" class="headerlink" title="Python管理"></a>Python管理</h4>创建新环境时，默认安装的Python版本和安装conda时使用的版本相同。创建环境时可以安装指定版本的Python。<br>创建安装Python3.5的新环境：<br><code>conda create --name envname python=3.5</code><br>相关的环境操作与上相同。<h4 id="包管理"><a href="#包管理" class="headerlink" title="包管理"></a>包管理</h4></li>
+<li>退出当前环境，会返回默认环境：<br>Linux和macOS:<code>source deactivate</code><br>Windows: <code>deactivate</code></li>
+</ol>
+<h4 id="Python管理"><a href="#Python管理" class="headerlink" title="Python管理"></a>Python管理</h4><p>创建新环境时，默认安装的Python版本和安装conda时使用的版本相同。创建环境时可以安装指定版本的Python。<br>创建安装Python3.5的新环境：<br><code>conda create --name envname python=3.5</code><br>相关的环境操作与上相同。</p>
+<h4 id="包管理"><a href="#包管理" class="headerlink" title="包管理"></a>包管理</h4><ol>
 <li>当你想要安装某个包时，可以在Anaconda的库中搜索是否存在这个包：<br><code>conda search package</code></li>
 <li>若此包存在，可以安装这个包到当前的环境：<br><code>conda install package</code></li>
 <li>查看所有已安装的包：<br><code>conda list</code></li>
