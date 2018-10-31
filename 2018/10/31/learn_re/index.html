@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="ZeeTee的学习记录">
 <meta property="og:description" content="正则表达式正则表达式是一些由字符和特殊符号组成的字符串，通过这个字符串可以匹配其他字符串中具有相同模式的部分。 正则表达式的组成一般的正则表达式由常见的符号的组成，这些符号在正则表达式中被赋予了不同的含义和作用，这些符号可以被分成如下的几类： 字母在正则表达式中，单纯的字母和字母组合可以匹配相同的字母和字母组合，例如正则表达式abc可以匹配字符串abc。 符号在正则表达式中使用符号进行复杂而又">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-31T12:07:50.108Z">
+<meta property="og:updated_time" content="2018-10-31T12:57:04.416Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式-python">
 <meta name="twitter:description" content="正则表达式正则表达式是一些由字符和特殊符号组成的字符串，通过这个字符串可以匹配其他字符串中具有相同模式的部分。 正则表达式的组成一般的正则表达式由常见的符号的组成，这些符号在正则表达式中被赋予了不同的含义和作用，这些符号可以被分成如下的几类： 字母在正则表达式中，单纯的字母和字母组合可以匹配相同的字母和字母组合，例如正则表达式abc可以匹配字符串abc。 符号在正则表达式中使用符号进行复杂而又">
@@ -351,66 +351,151 @@
 <thead>
 <tr>
 <th style="text-align:center">符号</th>
-<th style="text-align:left">规则描述</th>
+<th style="text-align:center">规则描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:center">  &#124;</td>
-<td style="text-align:left">re1&#124;re2 表示匹配re1或re2</td>
+<td style="text-align:center">re1&#124;re2 表示匹配re1或re2</td>
 </tr>
 <tr>
 <td style="text-align:center">  .</td>
-<td style="text-align:left">可以用来匹配任何的字符（除\n外)</td>
+<td style="text-align:center">可以用来匹配任何的字符（除\n外)</td>
 </tr>
 <tr>
 <td style="text-align:center">  *</td>
-<td style="text-align:left">匹配符号之前的正则表达式0次或多次</td>
+<td style="text-align:center">匹配符号之前的正则表达式0次或多次</td>
 </tr>
 <tr>
 <td style="text-align:center">  +</td>
-<td style="text-align:left">匹配符号之前的正则表达式1次或多次</td>
+<td style="text-align:center">匹配符号之前的正则表达式1次或多次</td>
 </tr>
 <tr>
 <td style="text-align:center">  ?</td>
-<td style="text-align:left">匹配符号之前的正则表达式0次或1次，当该符号位于封闭的正则表达式之后表示该正则表达式匹配尽可能少的次数（非贪婪匹配）</td>
+<td style="text-align:center">匹配符号之前的正则表达式0次或1次，当该符号位于封闭的正则表达式之后表示该正则表达式匹配尽可能少的次数（非贪婪匹配）</td>
 </tr>
 <tr>
 <td style="text-align:center">  ^</td>
-<td style="text-align:left">匹配字符串的起始位置</td>
+<td style="text-align:center">匹配字符串的起始位置</td>
 </tr>
 <tr>
 <td style="text-align:center">  $</td>
-<td style="text-align:left">匹配字符串的终止位置</td>
+<td style="text-align:center">匹配字符串的终止位置</td>
 </tr>
 <tr>
 <td style="text-align:center">  {N}</td>
-<td style="text-align:left">匹配符号之前的正则表达式N次</td>
+<td style="text-align:center">匹配符号之前的正则表达式N次</td>
 </tr>
 <tr>
 <td style="text-align:center">  {M,N}</td>
-<td style="text-align:left">匹配符号之前的正则表达式M~N次</td>
+<td style="text-align:center">匹配符号之前的正则表达式M~N次</td>
 </tr>
 <tr>
 <td style="text-align:center">  […]</td>
-<td style="text-align:left">匹配括号内任一字符 例：b[ab]t 可匹配 bat或bbt</td>
+<td style="text-align:center">匹配括号内任一字符 例：b[ab]t 可匹配 bat或bbt</td>
 </tr>
 <tr>
 <td style="text-align:center">  [x-y]</td>
-<td style="text-align:left">匹配范围内的任一字符 例：[0-9] 可匹配0-9任一数字</td>
+<td style="text-align:center">匹配范围内的任一字符 例：[0-9] 可匹配0-9任一数字</td>
 </tr>
 <tr>
 <td style="text-align:center">  [^..]</td>
-<td style="text-align:left">相当于取反操作，不匹配字符集内的所有字符</td>
+<td style="text-align:center">相当于取反操作，不匹配字符集内的所有字符</td>
 </tr>
 <tr>
 <td style="text-align:center">  (…)</td>
-<td style="text-align:left">封闭正则表达式，可以形成子组，该子组可以独立保存</td>
+<td style="text-align:center">封闭正则表达式，可以形成子组，该子组可以独立保存</td>
 </tr>
 </tbody>
 </table>
 <p>  若想要匹配字符串中的该类符号，需要在符号前加‘\’进行转义，如\*就表示乘号而不是正则表达式的符号</p>
-<h3 id="特殊符号"><a href="#特殊符号" class="headerlink" title="特殊符号"></a>特殊符号</h3><p>在正则表达式存在一些特殊符号，他们由“\”加字母组成，表示的功能和上述的符号有部分重合，主要是考虑到有些地区的键盘上不存在形如‘$’这类符号。这些特殊符号和ASCII码会产生冲突，因为使用的‘\’符号会被理解成转义符。有两种解决方法：其一使用‘\’再对符号进行转义，其二使用Python的原始字符串</p>
+<h3 id="特殊符号"><a href="#特殊符号" class="headerlink" title="特殊符号"></a>特殊符号</h3><p>在正则表达式存在一些特殊符号，他们由“\”加字母组成，表示的功能和上述的符号有部分重合，主要是考虑到有些地区的键盘上不存在形如‘$’这类符号。这些特殊符号和ASCII码会产生冲突，因为使用的‘\’符号会被理解成转义符。有两种解决方法：其一使用‘\’再对符号进行转义;其二使用Python的原始字符串r’…’,在原始字符串中字符都被当作正则表达式处理，‘\’无需转义，但需要注意的是，要匹配上小节提到的符号还要使用转义。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">特殊符号</th>
+<th style="text-align:center">规则描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"> \d</td>
+<td style="text-align:center">匹配所有的任何的十进制数与[0-9]相同，与\D相反</td>
+</tr>
+<tr>
+<td style="text-align:center"> \w</td>
+<td style="text-align:center">匹配任何字母数字，与[a-zA-Z0-9]相同，与\W相反</td>
+</tr>
+<tr>
+<td style="text-align:center"> \s</td>
+<td style="text-align:center">匹配任何的空字符，与[\n\t\r\v\f]相同，与\S相反</td>
+</tr>
+<tr>
+<td style="text-align:center"> \b</td>
+<td style="text-align:center">匹配任何的单词边界，与\B相反</td>
+</tr>
+<tr>
+<td style="text-align:center"> \N</td>
+<td style="text-align:center">匹配已经保存的子组N</td>
+</tr>
+<tr>
+<td style="text-align:center"> \A</td>
+<td style="text-align:center">匹配字符串的开始，与^相同</td>
+</tr>
+<tr>
+<td style="text-align:center"> \Z</td>
+<td style="text-align:center">匹配字符串的结尾，与$相同</td>
+</tr>
+</tbody>
+</table>
+<h3 id="扩展表示法"><a href="#扩展表示法" class="headerlink" title="扩展表示法"></a>扩展表示法</h3><p> 正则表达式中存在一些扩展表示法，这些模式不会产生具体的匹配结果，更多的是标记，会对结果进行限制或处理。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">扩展表示</th>
+<th style="text-align:center">规则描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"> (?iLmsux)</td>
+<td style="text-align:center">iLmsux可以替换成功能不同的标记参数，<!--具体的参数--></td>
+</tr>
+<tr>
+<td style="text-align:center"> (?:…)</td>
+<td style="text-align:center">以子组的形式匹配，但是该子组不会保存</td>
+</tr>
+<tr>
+<td style="text-align:center"> (?=…)</td>
+<td style="text-align:center">若…位置上的字符匹配时，才满足匹配，之前的正则表达式才能匹配，但…位置上匹配的字符并不取出，正向前视断言</td>
+</tr>
+<tr>
+<td style="text-align:center"> (?!…)</td>
+<td style="text-align:center">同上一个效果相反，…位置的字符不匹配，之前的正则表达式才能匹配，同样…字符不取出，负向前视断言</td>
+</tr>
+<tr>
+<td style="text-align:center"> (?&lt;=…)</td>
+<td style="text-align:center">若…位置上的字符匹配时，才满足匹配，<strong>之后</strong>的正则表达式才能匹配，但…位置上匹配的字符并不取出，正向后视断言</td>
+</tr>
+<tr>
+<td style="text-align:center"> (?&lt;!…)</td>
+<td style="text-align:center">同上一个效果相反，…位置的字符不匹配，<strong>之后</strong>的正则表达式才能匹配，同样…字符不取出，负向后视断言</td>
+</tr>
+<tr>
+<td style="text-align:center"> (?P\<name>…)</name></td>
+<td style="text-align:center">为…中匹配出的子组赋名称name</td>
+</tr>
+<tr>
+<td style="text-align:center"> (?P=name)</td>
+<td style="text-align:center">使用之前已经赋值的名字为name的子组</td>
+</tr>
+<tr>
+<td style="text-align:center"> (?(id/name)Y&#124;N)</td>
+<td style="text-align:center">若由id或name提供的子组存在，就同Y字符串匹配，否则同字符串N匹配</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -585,7 +670,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#正则表达式"><span class="nav-number">1.</span> <span class="nav-text">正则表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式的组成"><span class="nav-number">1.1.</span> <span class="nav-text">正则表达式的组成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字母"><span class="nav-number">1.1.1.</span> <span class="nav-text">字母</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#符号"><span class="nav-number">1.1.2.</span> <span class="nav-text">符号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特殊符号"><span class="nav-number">1.1.3.</span> <span class="nav-text">特殊符号</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#正则表达式"><span class="nav-number">1.</span> <span class="nav-text">正则表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式的组成"><span class="nav-number">1.1.</span> <span class="nav-text">正则表达式的组成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字母"><span class="nav-number">1.1.1.</span> <span class="nav-text">字母</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#符号"><span class="nav-number">1.1.2.</span> <span class="nav-text">符号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特殊符号"><span class="nav-number">1.1.3.</span> <span class="nav-text">特殊符号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展表示法"><span class="nav-number">1.1.4.</span> <span class="nav-text">扩展表示法</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
