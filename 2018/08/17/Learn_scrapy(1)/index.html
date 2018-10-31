@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="ZeeTee的学习记录">
 <meta property="og:description" content="scrapy基础概念-命令行工具scrapy是通过命令行中一行行的命令进行控制的。这里包含很多命令。 scrapy项目的目录结构首先我们需要了解scrapy项目的目录结构。每一个scrapy项目都有相同的默认目录结构：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-17T14:11:14.345Z">
+<meta property="og:updated_time" content="2018-08-19T03:42:38.410Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="scrapy基础概念-命令行工具">
 <meta name="twitter:description" content="scrapy基础概念-命令行工具scrapy是通过命令行中一行行的命令进行控制的。这里包含很多命令。 scrapy项目的目录结构首先我们需要了解scrapy项目的目录结构。每一个scrapy项目都有相同的默认目录结构：">
@@ -381,9 +381,18 @@ Available commands:
     [ more ]      More commands available when run from project directory
 
 Use &quot;scrapy &lt;command&gt; -h&quot; to see more info about a command
-</code></pre><h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><p>当你想创建一个scrapy项目时使用：</p>
+</code></pre><h3 id="项目创建"><a href="#项目创建" class="headerlink" title="项目创建"></a>项目创建</h3><p>当你想创建一个scrapy项目时使用：</p>
 <pre><code>scrapy startproject projectname [project_dir]
-</code></pre><p>这个命令会在<code>project_dir</code>目录下创建项目<code>projectname</code>。<code>project_dir</code>为可选参数，若没有给出，<code>project_dir</code>和<code>projectname</code>相同。</p>
+</code></pre><p>scrapy的命令都会在<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 项目控制</span><br><span class="line"></span><br><span class="line">在项目文件内使用scrapy工具可以管理和控制整个项目。</span><br><span class="line">比如，创建一个爬虫：</span><br><span class="line"></span><br><span class="line">    scrapy genspider mydomain mydomain.com</span><br><span class="line"></span><br><span class="line">有的命令必须在项目内执行，有些则可以在项目外执行。下一节具体讲解各种命令。</span><br><span class="line"></span><br><span class="line">## 命令详解</span><br><span class="line"></span><br><span class="line">所有的命令可以分为两类：项目内执行、可项目外执行。</span><br><span class="line"></span><br><span class="line">### 新建项目startproject</span><br><span class="line"></span><br><span class="line">* 语法：```scrapy startproject &lt;project_name&gt; [project_dir]</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>可项目外执行</li>
+</ul>
+<p>这个命令会在<code>project_dir</code>目录下创建项目<code>project_name</code>。<code>project_dir</code>为可选参数，若没有给出，<code>project_dir</code>和<code>project_name</code>相同。</p>
+<h3 id="新建爬虫genspider"><a href="#新建爬虫genspider" class="headerlink" title="新建爬虫genspider"></a>新建爬虫genspider</h3><ul>
+<li>语法：<code>scrapy genspider [-t template] &lt;name&gt; &lt;domain&gt;</code></li>
+<li>可在项目外执行</li>
+</ul>
+<p>这个命令可以根据预先定义的模版新建爬虫</p>
 
       
     </div>
@@ -423,6 +432,10 @@ Use &quot;scrapy &lt;command&gt; -h&quot; to see more info about a command
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/19/learn_git/" rel="prev" title="Git学习">
+                Git学习 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -503,7 +516,7 @@ Use &quot;scrapy &lt;command&gt; -h&quot; to see more info about a command
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -525,7 +538,7 @@ Use &quot;scrapy &lt;command&gt; -h&quot; to see more info about a command
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -558,7 +571,7 @@ Use &quot;scrapy &lt;command&gt; -h&quot; to see more info about a command
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#scrapy基础概念-命令行工具"><span class="nav-number">1.</span> <span class="nav-text">scrapy基础概念-命令行工具</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#scrapy项目的目录结构"><span class="nav-number">1.1.</span> <span class="nav-text">scrapy项目的目录结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用命令行工具"><span class="nav-number">1.2.</span> <span class="nav-text">使用命令行工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建项目"><span class="nav-number">1.2.1.</span> <span class="nav-text">创建项目</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#scrapy基础概念-命令行工具"><span class="nav-number">1.</span> <span class="nav-text">scrapy基础概念-命令行工具</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#scrapy项目的目录结构"><span class="nav-number">1.1.</span> <span class="nav-text">scrapy项目的目录结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用命令行工具"><span class="nav-number">1.2.</span> <span class="nav-text">使用命令行工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#项目创建"><span class="nav-number">1.2.1.</span> <span class="nav-text">项目创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建爬虫genspider"><span class="nav-number">1.2.2.</span> <span class="nav-text">新建爬虫genspider</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

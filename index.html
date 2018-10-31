@@ -239,6 +239,678 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/31/learn_re/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZeeTee的学习记录">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/31/learn_re/" itemprop="url">正则表达式-python</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-31T16:12:08+08:00">
+                2018-10-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术文章/" itemprop="url" rel="index">
+                    <span itemprop="name">技术文章</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/10/31/learn_re/" class="leancloud_visitors" data-flag-title="正则表达式-python">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><p>正则表达式是一些由字符和特殊符号组成的字符串，通过这个字符串可以匹配其他字符串中具有相同模式的部分。</p>
+<h2 id="正则表达式的组成"><a href="#正则表达式的组成" class="headerlink" title="正则表达式的组成"></a>正则表达式的组成</h2><p>一般的正则表达式由常见的符号的组成，这些符号在正则表达式中被赋予了不同的含义和作用，这些符号可以被分成如下的几类：</p>
+<h3 id="字母"><a href="#字母" class="headerlink" title="字母"></a>字母</h3><p>在正则表达式中，单纯的字母和字母组合可以匹配相同的字母和字母组合，例如正则表达式abc可以匹配字符串abc。</p>
+<h3 id="符号"><a href="#符号" class="headerlink" title="符号"></a>符号</h3><p>在正则表达式中使用符号进行复杂而又灵活的操作，以下以表格的形式详述其功能。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:left">规则描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">  \</td>
+<td style="text-align:left"></td>
+<td>re1\</td>
+<td>re2 表示匹配re1或re2</td>
+</tr>
+<tr>
+<td style="text-align:center">  .</td>
+<td style="text-align:left">可以用来匹配任何的字符（除\n外)</td>
+</tr>
+<tr>
+<td style="text-align:center">  *</td>
+<td style="text-align:left">匹配符号之前的正则表达式0次或多次</td>
+</tr>
+<tr>
+<td style="text-align:center">  +</td>
+<td style="text-align:left">匹配符号之前的正则表达式1次或多次</td>
+</tr>
+<tr>
+<td style="text-align:center">  ?</td>
+<td style="text-align:left">匹配符号之前的正则表达式0次或1次，当该符号位于封闭的正则表达式之后表示该正则表达式匹配尽可能少的次数（非贪婪匹配）</td>
+</tr>
+<tr>
+<td style="text-align:center">  ^</td>
+<td style="text-align:left">匹配字符串的起始位置</td>
+</tr>
+<tr>
+<td style="text-align:center">  $</td>
+<td style="text-align:left">匹配字符串的终止位置</td>
+</tr>
+<tr>
+<td style="text-align:center">  {N}</td>
+<td style="text-align:left">匹配符号之前的正则表达式N次</td>
+</tr>
+<tr>
+<td style="text-align:center">  {M,N}</td>
+<td style="text-align:left">匹配符号之前的正则表达式M~N次</td>
+</tr>
+<tr>
+<td style="text-align:center">  […]</td>
+<td style="text-align:left">匹配括号内任一字符 例：b[ab]t 可匹配 bat或bbt</td>
+</tr>
+<tr>
+<td style="text-align:center">  [x-y]</td>
+<td style="text-align:left">匹配范围内的任一字符 例：[0-9] 可匹配0-9任一数字</td>
+</tr>
+<tr>
+<td style="text-align:center">  [^..]</td>
+<td style="text-align:left">相当于取反操作，不匹配字符集内的所有字符</td>
+</tr>
+<tr>
+<td style="text-align:center">  (…)</td>
+<td style="text-align:left">封闭正则表达式，可以形成子组，该子组可以独立保存</td>
+</tr>
+</tbody>
+</table>
+<p>  若想要匹配字符串中的该类符号，需要在符号前加‘\’进行转义，如\*就表示乘号而不是正则表达式的符号</p>
+<h3 id="特殊符号"><a href="#特殊符号" class="headerlink" title="特殊符号"></a>特殊符号</h3><p>在正则表达式存在一些特殊符号，他们由“\”加字母组成，表示的功能和上述的符号有部分重合，主要是考虑到有些地区的键盘上不存在形如‘$’这类符号。这些特殊符号和ASCII码会产生冲突，因为使用的‘\’符号会被理解成转义符。有两种解决方法：其一使用‘\’再对符号进行转义，其二使用Python的原始字符串</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/16/Learn_error/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZeeTee的学习记录">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/16/Learn_error/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-16T16:41:38+08:00">
+                2018-09-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/09/16/Learn_error/" class="leancloud_visitors" data-flag-title="">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="错误总结"><a href="#错误总结" class="headerlink" title="错误总结"></a>错误总结</h1><h2 id="jupyter-启动失败"><a href="#jupyter-启动失败" class="headerlink" title="jupyter 启动失败"></a>jupyter 启动失败</h2><p>-&gt; 更新zeromq:</p>
+<pre><code>conda install zeromq
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/19/learn_macCommand/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZeeTee的学习记录">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/19/learn_macCommand/" itemprop="url">Mac常用命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-19T15:45:24+08:00">
+                2018-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术文章/" itemprop="url" rel="index">
+                    <span itemprop="name">技术文章</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/19/learn_macCommand/" class="leancloud_visitors" data-flag-title="Mac常用命令">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Mac常用命令"><a href="#Mac常用命令" class="headerlink" title="Mac常用命令"></a>Mac常用命令</h1><p><code>pwd</code>:显示当前目录路径</p>
+<pre><code>(py34) mbp:quotesbot zhang$ pwd
+/Users/zhang/gitdir/quotesbot
+</code></pre><p><code>ls -ah</code>:命令行中显示隐藏文件</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/19/learn_git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZeeTee的学习记录">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/19/learn_git/" itemprop="url">Git学习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-19T15:34:10+08:00">
+                2018-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术文章/" itemprop="url" rel="index">
+                    <span itemprop="name">技术文章</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/19/learn_git/" class="leancloud_visitors" data-flag-title="Git学习">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Git学习"><a href="#Git学习" class="headerlink" title="Git学习"></a>Git学习</h1><h2 id="Git使用"><a href="#Git使用" class="headerlink" title="Git使用"></a>Git使用</h2><h3 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h3><p>使用命令<code>git init</code>,可以将当前目录建成一个空的仓库。</p>
+<h3 id="添加文件"><a href="#添加文件" class="headerlink" title="添加文件"></a>添加文件</h3><p>添加文件的过程分为两步：</p>
+<ol>
+<li>使用<code>git add &lt;file&gt;</code>添加文件，该过程可以重复多次。</li>
+<li>使用<code>git commit -m &lt;message&gt;</code>提交改动到————，并包含提交内容的改动信息。</li>
+</ol>
+<p>文件修改后同样是通过这两步将文件提交到仓库保存。其中当需要查看两个文件的差异时可以使用<code>git diff</code>查看修改内容。</p>
+<h3 id="掌握Git状态"><a href="#掌握Git状态" class="headerlink" title="掌握Git状态"></a>掌握Git状态</h3><p>使用命令<code>git status</code>,查看工作区(working tree)状态。</p>
+<h3 id="返回前一版本"><a href="#返回前一版本" class="headerlink" title="返回前一版本"></a>返回前一版本</h3><p>当你想要返回你当前版本的前一版本时，首先需要查看提交历史记录：<code>git log</code>。使用<code>git reflog</code>可以查看所有的命令历史。</p>
+<p>现在确定返回上一版本之后，使用命令<code>git reset --hard HEAD^</code>。将<code>HEAD^</code>更换为<code>commit id</code>可以跳到指定的提交版本(可以用来实现向前跳跃)。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/17/Learn_scrapy(1)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -750,7 +1422,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -772,7 +1444,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
